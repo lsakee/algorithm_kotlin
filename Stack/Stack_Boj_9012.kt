@@ -4,7 +4,6 @@ import java.util.*
 
 fun main() {
     val num = readLine()
-
     for (i in 1..num!!.toInt()) {
         val p = readLine()
         calculate(p.toString())
