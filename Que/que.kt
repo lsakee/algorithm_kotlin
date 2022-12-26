@@ -1,4 +1,0 @@
-package Que
-
-class que {
-}
