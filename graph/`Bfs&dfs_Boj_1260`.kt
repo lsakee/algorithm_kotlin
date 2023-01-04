@@ -1,6 +1,5 @@
 package graph
 
-import java.io.BufferedReader
 import java.io.InputStreamReader
 import java.util.*
 
@@ -38,7 +37,7 @@ fun makeLine(line: Int, graph: Array<IntArray>) = with(System.`in`.bufferedReade
     }
 }
 
-fun dfs(start: Int, graph: Array<IntArray>, visit: MutableList<Int>){
+fun dfs(start: Int, graph:Array<IntArray>, visit: MutableList<Int>){
 
     visit.add(start)
     for (newStart in 1 until graph.size) {
