@@ -7,7 +7,7 @@ fun main() = with(InputStreamReader(System.`in`)) {
     val (A, P) = readLine()!!.split(" ").map { it.toInt() }
     val visit = mutableListOf<Int>()
     val result = mutableListOf<Int>()
-    dfsSeq(A, P, visit,result)
+    dfsSeq(A, P, visit, result)
     println(result[0])
 }
 
@@ -20,14 +20,14 @@ private fun makeSequence(A: Int, P: Int): Int {
     return b
 }
 
-fun dfsSeq(start: Int, P: Int, visit: MutableList<Int>,result:MutableList<Int>):MutableList<Int> {
+fun dfsSeq(start: Int, P: Int, visit: MutableList<Int>, result: MutableList<Int>): MutableList<Int> {
     visit.add(start)
     var b = 0
     while (true) {
         val newStart = makeSequence(start, P)
-        if (!visit.contains(newStart)) dfsSeq(newStart, P, visit,result)
+        if (!visit.contains(newStart)) dfsSeq(newStart, P, visit, result)
         else {
-            b=visit.indexOf(newStart)
+            b = visit.indexOf(newStart)
             result.add(b)
             break
         }

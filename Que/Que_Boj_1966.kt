@@ -8,7 +8,6 @@ data class Node(
     val value: Int
 ) : Comparable<Node> {
     override fun compareTo(other: Node): Int = other.value - value
-
 }
 
 fun main() = with(System.`in`.bufferedReader()) {
