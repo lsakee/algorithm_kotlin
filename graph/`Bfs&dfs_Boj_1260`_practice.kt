@@ -12,18 +12,18 @@ fun main() = with(InputStreamReader(System.`in`)) {
 
     connectionLine(vertex,lineCount)
 
-    dfs(start, visit)
+    dfs(start)
     println()
     visit.clear()
-    bfs(start, visit)
-    /**
+    bfs(start)
+//    /**
     for (i in 0 until lineCount) {
     for ( j in 0 until lineCount) {
     print(graph[i][j])
     }
     println()
     }
-     **/
+//     **/
 }
 
 private fun connectionLine(vertex: Int, lineCount: Int) {
@@ -35,7 +35,7 @@ private fun connectionLine(vertex: Int, lineCount: Int) {
     }
 }
 
-private fun bfs(start: Int, visit: MutableList<Int>) {
+private fun bfs(start: Int) {
     val queue: Queue<Int> = LinkedList()
     queue.add(start)
     visit.add(start)
@@ -52,12 +52,12 @@ private fun bfs(start: Int, visit: MutableList<Int>) {
     }
 }
 
-private fun dfs(start: Int, visit: MutableList<Int>) {
+private fun dfs(start: Int) {
     visit.add(start)
     print("$start ")
     for (i in graph.indices) {
         if (!visit.contains(i) && graph[i][start] == 1 && graph[start][i] == 1) {
-            dfs(i, visit)
+            dfs(i)
         }
     }
 }
