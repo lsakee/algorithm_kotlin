@@ -16,14 +16,14 @@ fun main() = with(InputStreamReader(System.`in`)) {
     println()
     visit.clear()
     bfs(start)
-//    /**
+    /**
     for (i in 0 until lineCount) {
     for ( j in 0 until lineCount) {
     print(graph[i][j])
     }
     println()
     }
-//     **/
+     **/
 }
 
 private fun connectionLine(vertex: Int, lineCount: Int) {
@@ -51,6 +51,19 @@ private fun bfs(start: Int) {
         if (queue.isEmpty()) break
     }
 }
+/**
+ * 인접노드깊이별로먼저 방문 선입선출
+ * start 0
+ * 0 -> que 0 visit 0
+ * 1 -> que 1 visit 0 1
+ * 2 -> que 1,2 visit 012
+ * 3 -> que 1,2 visit 012
+ * 4 -> que 124 visit 0124
+ * start 1
+ * 0 ,2 연결 끝 그대로 que 24 visit 0124
+ * start2
+ * 3-> que 43 visit 01243
+ * **/
 
 private fun dfs(start: Int) {
     visit.add(start)
@@ -61,3 +74,9 @@ private fun dfs(start: Int) {
         }
     }
 }
+
+/**
+ * 들어간노드와 연결된노드 쭉탐색
+ * start 0
+ * visit 0
+ * 1-> visit 0,1**/
